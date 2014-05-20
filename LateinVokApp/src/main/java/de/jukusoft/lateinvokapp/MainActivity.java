@@ -51,6 +51,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void updatePoints () {
+        //Punktzahl updaten
+
         TextView pointsView = (TextView) this.findViewById(R.id.pointsView);
         pointsView.setText(LateinDataBase.getInstance().getPoints() + "");
     }
