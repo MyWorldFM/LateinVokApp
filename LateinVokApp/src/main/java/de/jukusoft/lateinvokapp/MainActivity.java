@@ -45,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
         this.start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Toast ausgeben
                 Toast toast = Toast.makeText(MainActivity.this, "Click!", Toast.LENGTH_SHORT);
             }
         });
