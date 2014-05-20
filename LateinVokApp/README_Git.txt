@@ -20,6 +20,13 @@ Folgendes auswählen:
 
 Dann auf "Ok" klicken.
 
+==== Änderungen von anderen herunterladen ====
+
+Damit man selbst auch die Änderungen der anderen hat, also auf dem aktuellen Stand ist, muss man diese Änderungen herunterladen, dies nennt man pull.
+
+Rechtsklick --> TortoiseGit --> Pull...
+
+Dann "Remote" auswählen, Remote Branch auf "master" setzen und auf "Ok" klicken.
 
 ==== Ein vorhandenes Verzeichnis versionieren ====
 
