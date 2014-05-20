@@ -2,15 +2,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="de.jukusoft.lateinvokapp.MainActivity">
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    tools:context="de.jukusoft.lateinvokapp.MainActivity"
+    android:background="#ff99cc00">
 
-    <TextView
-        android:text="@string/hello_world"
+    <include
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        layout="@layout/menuheader"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/include" />
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/include"
+        android:layout_alignLeft="@+id/include"
+        android:layout_alignStart="@+id/include">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/startButton"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:src="@drawable/ic_start"
+            android:contentDescription="Start"
+            android:clickable="false"
+            android:background="#00000000" />
+    </RelativeLayout>
 </RelativeLayout>
