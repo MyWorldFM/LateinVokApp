@@ -16,6 +16,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="de.jukusoft.lateinvokapp.LateinVokAppService"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="LateinVokAppService" >
+        </service>
+
+        <activity
+            android:name="de.jukusoft.lateinvokapp.activity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="de.jukusoft.lateinvokapp.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.jukusoft.lateinvokapp.MainActivity" />
+        </activity>
+
+        <receiver
+            android:name="de.jukusoft.lateinvokapp.services.LateinVokAppBroadcastReceivers"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED">
+                </action>
+                <category android:name="android.intent.category.HOME">
+                </category>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

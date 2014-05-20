@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff180c1c">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="10dp"
+        android:layout_height="fill_parent"
+        android:background="#00fffafa"></LinearLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="500"
+        android:id="@+id/pointsView"
+        android:textColor="#fffffaeb"
+        android:textSize="50dp"
+        android:textColorHighlight="#fffffaeb"
+        android:textColorHint="#fffffaeb"
+        android:textColorLink="#fffffaeb"
+        android:textIsSelectable="false"
+        android:layout_weight="1"
+        style="@style/TextAppearance.AppCompat.Base.SearchResult" />
+
+</LinearLayout>
