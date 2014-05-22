@@ -23,8 +23,16 @@ public class Downloader extends AsyncTask {
     protected File downloadpath = null;
     protected String www_path = "";
 
-    public Downloader (Activity activity) {
+    public Downloader () {
         //
+    }
+
+    public void setPath (File downloadpath) {
+        this.downloadpath = downloadpath;
+    }
+
+    public void setDownloadFinishedEvent (DownloadFinishedEvent finishedEvent) {
+        this.finishedEvent = finishedEvent;
     }
 
     //Link auf execute Methode
