@@ -12,6 +12,7 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -50,6 +51,14 @@ public class Downloader extends AsyncTask {
         try {
             String response_str = client.execute(request, responseHandler);
             Log.println(Log.ERROR, "HTTPClient", "Antwort des Requests: " + response_str);
+
+            if (this.downloadpath != null) {
+                //In Datei speichern
+                FileWriter writer = new FileWriter(this.downloadpath);
+                writer.write(response_str);
+                writer.flush();
+                writer.close();
+            }
 
             //Danach Event werfen
             if (this.finishedEvent != null) {
