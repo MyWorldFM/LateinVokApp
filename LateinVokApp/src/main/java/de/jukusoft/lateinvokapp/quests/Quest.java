@@ -5,9 +5,9 @@ import java.util.List;
 /**
  * Created by Justin on 23.05.2014.
  */
-public class Quests {
+public class Quest {
 
-    public List<Quests> listQuests () {
+    public List<Quest> listQuests () {
         return null;
     }
 
