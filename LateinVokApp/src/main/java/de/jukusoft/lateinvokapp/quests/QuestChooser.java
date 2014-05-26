@@ -19,10 +19,14 @@ public class QuestChooser {
     }
 
     public Quest getNextQuest () {
-        Quest quest = this.quests.get(0);
-        this.quests.remove(0);
+        if (this.quests.size() > 0) {
+            Quest quest = this.quests.get(0);
+            this.quests.remove(0);
 
-        return quest;
+            return quest;
+        } else {
+            return null;
+        }
     }
 
     public void addQuest (Quest quest) {

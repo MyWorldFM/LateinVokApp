@@ -7,12 +7,15 @@ import android.view.View;
 import java.util.HashMap;
 import java.util.List;
 
+import de.jukusoft.lateinvokapp.MainActivity;
+
 /**
  * Created by Justin on 23.05.2014.
  */
 public class Quest {
 
     protected HashMap<String,Object> extra = new HashMap<String,Object>();
+    protected Activity activity = null;
 
     public Quest () {
         //
@@ -46,7 +49,7 @@ public class Quest {
 
         @Override
         public void onClick(View view) {
-            //
+            Quest.this.check(Quest.this.activity, view, new HashMap<String,Object>());
         }
     }
 
