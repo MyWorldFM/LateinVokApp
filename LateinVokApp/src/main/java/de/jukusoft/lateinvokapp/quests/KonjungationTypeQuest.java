@@ -2,6 +2,7 @@ package de.jukusoft.lateinvokapp.quests;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.HashMap;
@@ -38,7 +39,7 @@ public class KonjungationTypeQuest extends Quest {
     }
 
     @Override
-    public boolean check (Activity activity, HashMap<String, Object> data) {
+    public boolean check (Activity activity, View view, HashMap<String, Object> data) {
         Button clicked_button = (Button) data.get("button");
 
         if (this.correct_konj.equals(clicked_button.getText())) {

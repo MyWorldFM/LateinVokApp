@@ -26,7 +26,7 @@ public class Quest {
         //
     }
 
-    public boolean check (Activity activity, HashMap<String,Object> data) {
+    public boolean check (Activity activity, View view, HashMap<String,Object> data) {
         return true;
     }
 
