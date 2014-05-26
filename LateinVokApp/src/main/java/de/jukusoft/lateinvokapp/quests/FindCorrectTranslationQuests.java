@@ -6,8 +6,10 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import de.jukusoft.lateinvokapp.R;
 
@@ -19,6 +21,9 @@ public class FindCorrectTranslationQuests extends Quest {
     protected String lateinword = "";
     protected int correct_answer = 1;
 
+    protected String correct_answer_str = "";
+
+    protected List<String> answers = new ArrayList<String>();
     protected List<Button> buttons = new ArrayList<Button>();
 
     public FindCorrectTranslationQuests () {
@@ -28,6 +33,17 @@ public class FindCorrectTranslationQuests extends Quest {
     @Override
     public void loadQuest () {
         //Quest laden
+        if (this.getExtra("lateinword") != null) {
+            this.lateinword = (String) this.getExtra("lateinword");
+        }
+
+        if (this.getExtra("correct_answer") != null) {
+            this.correct_answer_str = (String) this.getExtra("correct_answer");
+        }
+
+        if (this.getExtra("answerlist") != null) {
+            this.answers = (List<String>) this.getExtra("answerlist");
+        }
     }
 
     @Override
@@ -38,11 +54,31 @@ public class FindCorrectTranslationQuests extends Quest {
         this.buttons.add((Button) activity.findViewById(R.id.answer3));
         this.buttons.add((Button) activity.findViewById(R.id.answer4));
 
+        //Liste mischen
+        Collections.shuffle(this.answers);
+
+        //Zufallszahl zwischen 0 und 3 erzeugen
+        this.correct_answer = new Random().nextInt(4);
+
         int i = 0;
 
         for (Button button : this.buttons) {
             //onClick Listener hinzufügen
             button.setOnClickListener(new QuestOnClickListener(activity, i));
+
+            i++;
+        }
+
+        i = 0;
+
+        //Buttons beschriften
+        for (Button button : this.buttons) {
+            if (i == this.correct_answer) {
+                button.setText(this.correct_answer_str);
+            } else {
+                button.setText(this.answers.get(0));
+                this.answers.remove(0);
+            }
 
             i++;
         }
