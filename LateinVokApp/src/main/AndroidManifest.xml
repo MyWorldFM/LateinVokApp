@@ -4,8 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -44,12 +43,22 @@
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED">
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
                 </action>
-                <category android:name="android.intent.category.HOME">
+
+                <category android:name="android.intent.category.HOME" >
                 </category>
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="de.jukusoft.lateinvokapp.activity.QuestsActivity"
+            android:label="@string/title_activity_quests"
+            android:parentActivityName="de.jukusoft.lateinvokapp.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.jukusoft.lateinvokapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

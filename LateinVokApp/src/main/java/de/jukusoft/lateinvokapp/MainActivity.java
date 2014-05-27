@@ -49,6 +49,8 @@ public class MainActivity extends ActionBarActivity {
                 Toast toast = Toast.makeText(MainActivity.this, "Click!", Toast.LENGTH_SHORT);
             }
         });
+
+        this.start_button.setClickable(true);
     }
 
     public void updatePoints () {
