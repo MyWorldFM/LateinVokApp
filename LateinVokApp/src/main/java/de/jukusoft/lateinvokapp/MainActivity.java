@@ -11,6 +11,7 @@ import android.widget.Toast;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import de.jukusoft.lateinvokapp.activity.QuestsActivity;
 import de.jukusoft.lateinvokapp.database.LateinDataBase;
 
 
@@ -47,6 +48,9 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View view) {
                 //Toast ausgeben
                 Toast toast = Toast.makeText(MainActivity.this, "Click!", Toast.LENGTH_SHORT);
+
+                Intent intent = new Intent(MainActivity.this, QuestsActivity.class);
+                MainActivity.this.startActivity(intent);
             }
         });
 
